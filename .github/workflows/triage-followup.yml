@@ -4,9 +4,14 @@ on:
     - cron: "12 4 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   followup:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     defaults:
       run:
         working-directory: ./.github/scripts/triage-helper
