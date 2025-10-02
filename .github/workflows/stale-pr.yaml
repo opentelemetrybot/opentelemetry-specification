@@ -9,6 +9,7 @@ permissions:
 jobs:
   stale:
     permissions:
+      actions: write # because actions/stale deletes its old cache before saving new one
       pull-requests: write # required for marking and closing stale PRs
     runs-on: ubuntu-latest
     steps:
